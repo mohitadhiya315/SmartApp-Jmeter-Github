@@ -30,10 +30,10 @@ jobs:
         uses: QAInsights/PerfAction@v3.1
         with:
         # jmeter test plan to execute
-        test-plan-path: './AWS-Testing.jmx
-          
-          - name: Upload Results
-          uses: actions/upload-artifact@v2
+        test-plan-path: './AWS-Testing.jmx'
+        
+        - name: Upload Results
+        uses: actions/upload-artifact@v2
           with:
             name: jmeter-results
             path: result.jtl
