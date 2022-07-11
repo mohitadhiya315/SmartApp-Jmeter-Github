@@ -17,7 +17,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
         - name: JMeter Test
-          uses: QAInsights/PerfAction@3.1
+          uses: QAInsights/PerfAction@3.0
           with:
             test-plan-path: ./AWS-Testing.jmx
     
