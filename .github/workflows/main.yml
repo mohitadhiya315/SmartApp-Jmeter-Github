@@ -16,10 +16,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+        - name: Apache JMeter
+          uses: rbhadti94/apache-jmeter-action@v0.5.0
         - name: JMeter Test
-          uses: QAInsights/PerfAction@3.0
-          with:
-            test-plan-path: ./AWS-Testing.jmx
+          run: jmeter -n –t ./AWS-Testing.jmx
     
         - name: Upload Results
           uses: actions/upload-artifact@v2
