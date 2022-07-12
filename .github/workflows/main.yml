@@ -30,10 +30,12 @@ jobs:
             cd apache-jmeter-5.5/bin
             ./jmeter -v
             pwd
-        - name: download randomcsv
-          run : |
-            cd apache-jmeter-5.5/lib/ext
-            curl -O jmeter-plugins-random-csv-data-set-0.8.jar
+        - name: copy file via ssh password
+          run: |
+            with:
+              source: "./jmeter-plugins-random-csv-data-set-0.8.jar"
+              target: "apache-jmeter-5.5/lib/ext"
+        
         - name: install plugins
           run: |
             cd $GITHUB_WORKSPACE/apache-jmeter-5.5
