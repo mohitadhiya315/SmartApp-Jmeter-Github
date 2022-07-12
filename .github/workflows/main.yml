@@ -30,9 +30,9 @@ jobs:
             cd apache-jmeter-5.5/bin
             ./jmeter -v
             pwd
-        - name: copy file via ssh password
-          run: |
-            with:
+        - name: copy file
+          uses: canastro/copy-file-action@master
+          with:
               source: "./jmeter-plugins-random-csv-data-set-0.8.jar"
               target: "apache-jmeter-5.5/lib/ext"
         
