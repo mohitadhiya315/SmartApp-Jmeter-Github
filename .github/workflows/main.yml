@@ -41,7 +41,7 @@ jobs:
             unzip -o jpgc-dummy-0.4.zip  && rm jpgc-dummy-0.4.zip
             
             cd ..
-            java  -jar cmdrunner-0.4.jar --tool org.jmeterplugins.repository.PluginManagerCMD install-all
+            java  -jar cmdrunner-2.2.1.jar --tool org.jmeterplugins.repository.PluginManagerCMD install-all
             
         - name: run jmx scripts
           run: |
