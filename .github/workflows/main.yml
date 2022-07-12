@@ -30,6 +30,10 @@ jobs:
             cd apache-jmeter-5.5/bin
             ./jmeter -v
             pwd
+        - name: download cmd runner in lib
+          run : |
+            cd apache-jmeter-5.5/lib
+            curl -O https://repo1.maven.org/maven2/kg/apc/cmdrunner/2.2.1/cmdrunner-2.2.1.jar
         - name: install plugins
           run: |
             cd $GITHUB_WORKSPACE/apache-jmeter-5.5
