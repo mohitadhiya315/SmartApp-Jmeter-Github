@@ -46,10 +46,10 @@ jobs:
         - name: JMeter Test
           uses: QAInsights/PerfAction@3.1
           with:
-            test-plan-path: ./User Activity GCP Testing.jmx
+            test-plan-path: "./User Activity GCP Testing.jmx"
             
         - name: Upload Results
           uses: actions/upload-artifact@v2
           with:
             name: jmeter-results
-            path: ./result.jtl
+            path: "./result.jtl"
