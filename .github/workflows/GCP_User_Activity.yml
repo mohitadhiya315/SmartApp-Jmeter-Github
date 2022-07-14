@@ -44,7 +44,7 @@ jobs:
             unzip -o jpgc-dummy-0.4.zip  && rm jpgc-dummy-0.4.zip
             
         - name: JMeter Test
-          uses: QAInsights/PerfAction@3.1
+          uses: QAInsights/PerfAction@3.0
           with:
             test-plan-path: ./User Activity GCP Testing.jmx
             
