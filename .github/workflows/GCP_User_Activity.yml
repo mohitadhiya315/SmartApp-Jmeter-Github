@@ -43,10 +43,12 @@ jobs:
             wget -q --no-check-certificate https://jmeter-plugins.org/files/packages/jpgc-dummy-0.4.zip  -P .
             unzip -o jpgc-dummy-0.4.zip  && rm jpgc-dummy-0.4.zip
             
-        - name: JMeter Test
-          uses: QAInsights/PerfAction@3.0
-          with:
-            test-plan-path: ./User Activity GCP Testing.jmx
+        - name: run jmx scripts
+          run: |
+            cd $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
+            for i in $( ls $GITHUB_WORKSPACE/User Activity GCP Testing.jmx); do
+            ./jmeter -n -t $i;
+            done
             
         - name: Upload Results
           uses: actions/upload-artifact@v2
