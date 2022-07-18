@@ -50,13 +50,8 @@ jobs:
             ./jmeter -n -t $i;
             done
             
-        #name: Upload Results
-          #uses: actions/upload-artifact@v2
-          #with:
-            #name: jmeter-results
-            #path: result.jtl
-        - name: Upload JMeter Test Results
-          uses: ./
+        - name: Upload Results
+          uses: actions/upload-artifact@v2
           with:
-            name: test_results
-            path: ./test_report
+            name: jmeter-results
+            path: "/home/runner/work/SmartApp-Jmeter-Github/SmartApp-Jmeter-Github/result.jtl"
