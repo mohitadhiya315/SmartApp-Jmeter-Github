@@ -49,6 +49,11 @@ jobs:
             for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
             ./jmeter -n -t $i;
             done
+        - name: Upload JMeter Test Results
+          uses: actions/upload-artifact@v2.2.4
+          with:
+            name: test_results
+            path: /home/runner/work/SmartApp-Jmeter-Github/SmartApp-Jmeter-Github/result.jtl
             
         - name: Upload Results
           uses: actions/upload-artifact@v2
