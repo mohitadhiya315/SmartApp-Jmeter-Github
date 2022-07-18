@@ -56,7 +56,7 @@ jobs:
             #name: jmeter-results
             #path: result.jtl
         - name: Upload JMeter Test Results
-          uses: actions/upload-artifact@v2.2.4
+          uses: ./
           with:
             name: test_results
-            path: test_report
+            path: ./test_report
