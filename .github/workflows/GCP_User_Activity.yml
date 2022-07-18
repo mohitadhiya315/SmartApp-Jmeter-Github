@@ -50,8 +50,13 @@ jobs:
             ./jmeter -n -t $i;
             done
             
-        - name: Upload Results
-          uses: actions/upload-artifact@v2
+        #name: Upload Results
+          #uses: actions/upload-artifact@v2
+          #with:
+            #name: jmeter-results
+            #path: result.jtl
+        - name: Upload JMeter Test Results
+          uses: actions/upload-artifact@v2.2.4
           with:
-            name: jmeter-results
-            path: result.jtl
+            name: test_results
+            path: test_report
