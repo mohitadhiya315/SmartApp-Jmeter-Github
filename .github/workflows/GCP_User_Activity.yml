@@ -57,7 +57,7 @@ jobs:
         - name: view result file
           run: |
             ls
-            cat ./result.jtl
+            cat result.jtl
             
 #         - name: Upload Results
 #           uses: actions/upload-artifact@v3
