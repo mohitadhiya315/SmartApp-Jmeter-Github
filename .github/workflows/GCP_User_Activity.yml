@@ -45,7 +45,7 @@ jobs:
         
         - name: view result file
           run: |
-            mkdir ./result.jtl
+            touch ./result.jtl
             
         - name: run jmx scripts
           run: |
