@@ -3,10 +3,10 @@
 name: UserActivity
 
 # Controls when the workflow will run
-# on:
+on:
 #   # Triggers the workflow on push or pull request events but only for the "main" branch
-#   push:
-#     branches: [ "main" ]
+  push:
+    branches: [ "main" ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -53,17 +53,31 @@ jobs:
             ./jmeter -n -t $GITHUB_WORKSPACE/UserActivityGCP.jmx -l ./result.jtl;
 
             
-#         - name: run jmx scripts
-#           run: |
-#             cd $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
-#             for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
-#             ./jmeter -n -t $i -l ./result.jtl;
-#             done
-        
-        - name: view result file
+        - name: run jmx scripts
           run: |
-            ls
-            cat result.jtl
+            cd $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
+            for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
+            ./jmeter -n -t $i -l ./result.jtl;
+            done
+        - name: Step 1 - Create a temporary artifact downloads folder
+          run: mkdir downloads
+        
+        - name: step 2 - Add artifacts to publish to the temp folder
+          run: |
+            cd downloads
+            echo 'result'    > result.jtl
+            cd ..
+    
+        - name: Step 3 - Use the Upload Artifact GitHub Action
+          uses: actions/upload-artifact@v2
+          with: 
+            name: assets-for-download
+            path: downloads
+        
+#         - name: view result file
+#           run: |
+#             ls
+#             cat result.jtl
             
 #         - name: Upload Results
 #           uses: actions/upload-artifact@v3
