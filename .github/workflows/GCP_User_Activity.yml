@@ -58,6 +58,7 @@ jobs:
           run: |
             ls
             cat result.jtl
+            cat Signin.csv
             
 #         - name: Upload Results
 #           uses: actions/upload-artifact@v3
