@@ -57,8 +57,8 @@ jobs:
           run: |
             cd $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
             for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
-            ./jmeter -n -t $i -l $GITHUB_WORKSPACE/${i%.jmx}.jtl 
-            --input-jtl $GITHUB_WORKSPACE/${i%.jmx}.jtl --plugin-type SynthesisReport;
+            ./jmeter -n -t $GITHUB_WORKSPACE/$i  -l $GITHUB_WORKSPACE/${i%.jmx}.jtl 
+            ./JMeterPluginsCMD.sh --generate-csv $GITHUB_WORKSPACE/test_report/${i%.jmx}.csv --input-jtl $GITHUB_WORKSPACE/${i%.jmx}.jtl --plugin-type SynthesisReport
             done
         
         - name: move jtl files to test_report
