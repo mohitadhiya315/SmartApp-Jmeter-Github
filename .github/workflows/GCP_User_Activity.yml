@@ -74,10 +74,10 @@ jobs:
             name: assets-for-download
             path: downloads
         
-#         - name: view result file
-#           run: |
-#             ls
-#             cat result.jtl
+        - name: view result file
+          run: |
+             ls
+             cat result.jtl
             
 #         - name: Upload Results
 #           uses: actions/upload-artifact@v3
