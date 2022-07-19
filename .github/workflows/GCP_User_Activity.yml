@@ -48,11 +48,10 @@ jobs:
             cd $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
             for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
             ./jmeter -n -t $i;
-            outputReportsFolder: reports/
             done   
             
         - name: Upload Results
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v3
           with:
             name: jmeter-results
             path: /home/runner/work/SmartApp-Jmeter-Github/SmartApp-Jmeter-Github/result.jtl
