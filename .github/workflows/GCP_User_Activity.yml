@@ -46,19 +46,24 @@ jobs:
         - name: view result file
           run: |
             touch ./result.jtl
-            
-        - name: run jmx scripts
+        
+        - name: run jmx scripts       
           run: |
             cd $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
-            for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
-            ./jmeter -n -t $i -l ./result.jtl;
-            done
+            ./jmeter -n -t $GITHUB_WORKSPACE/UserActivityGCP.jmx -l ./result.jtl;
+
+            
+#         - name: run jmx scripts
+#           run: |
+#             cd $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
+#             for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
+#             ./jmeter -n -t $i -l ./result.jtl;
+#             done
         
         - name: view result file
           run: |
             ls
             cat result.jtl
-            cat Signin.csv
             
 #         - name: Upload Results
 #           uses: actions/upload-artifact@v3
