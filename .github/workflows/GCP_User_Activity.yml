@@ -49,11 +49,13 @@ jobs:
             for i in $( ls $GITHUB_WORKSPACE/UserActivityGCP.jmx); do
             ./jmeter -n -t $i;
             done
-        - name: Upload JMeter Test Results
-          uses: actions/upload-artifact@v2.2.4
+        - name: Test Report
+          uses: dorny/test-reporter@v1
+          if: success() || failure()    # run this step even if previous step failed
           with:
-            name: test_results
-            path: /home/runner/work/SmartApp-Jmeter-Github/SmartApp-Jmeter-Github/result.jtl
+            name: JEST Tests            # Name of the check run which will be created
+            path: reports/jest-*.xml    # Path to test results
+            reporter: jest-junit   
             
         - name: Upload Results
           uses: actions/upload-artifact@v2
