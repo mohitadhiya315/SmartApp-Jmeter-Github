@@ -87,7 +87,7 @@
       </CacheManager>
       <hashTree/>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-        <stringProp name="filename">/Users/amohitnatearlal/Desktop/SmartApp/Signin.csv</stringProp>
+        <stringProp name="filename">/home/runner/work/SmartApp-Jmeter-Github/SmartApp-Jmeter-Github/Signin.csv</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="variableNames">username,password</stringProp>
         <boolProp name="ignoreFirstLine">true</boolProp>
@@ -348,7 +348,7 @@
               <hashTree/>
             </hashTree>
             <com.blazemeter.jmeter.RandomCSVDataSetConfig guiclass="com.blazemeter.jmeter.RandomCSVDataSetConfigGui" testclass="com.blazemeter.jmeter.RandomCSVDataSetConfig" testname="bzm - Random CSV Data Set Config" enabled="true">
-              <stringProp name="filename">/Users/amohitnatearlal/Desktop/SmartApp/Scifi.csv</stringProp>
+              <stringProp name="filename">/home/runner/work/SmartApp-Jmeter-Github/SmartApp-Jmeter-Github/Scifi.csv</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
               <stringProp name="delimiter">,</stringProp>
               <stringProp name="variableNames">movieid</stringProp>
